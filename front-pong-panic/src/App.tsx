@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Introduction } from '@/components/Introduction';
+import { Features } from '@/components/Features';
+import { GameplayVideo } from '@/components/GameplayVideo';
+import { Gallery } from '@/components/Gallery';
+import { Stats } from '@/components/Stats';
+import { Team } from '@/components/Team';
+import { Download } from '@/components/Download';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="min-h-screen bg-[#f8f9fa] font-['Poppins']">
+      <Introduction />
+      <Features />
+      <GameplayVideo />
+      <Gallery />
+      <Stats />
+      <Team />
+      <Download />
+    </div>
+  );
 }
-
-export default App
