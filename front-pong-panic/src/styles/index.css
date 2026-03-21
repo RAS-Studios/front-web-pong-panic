@@ -3,11 +3,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* désactive le scroll normal */
+  background-color: #F5F3FF;
+  font-family: 'Poppins', sans-serif;
 }
 
 .app {
   height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory; /* la magie */
 }
