@@ -1,3 +1,9 @@
+import '../styles/stats.css'
+
 export function Stats() {
-  return <div>Stats</div>
+  return (
+    <section className="stats">
+      
+    </section>
+  )
 }

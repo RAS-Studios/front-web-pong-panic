@@ -5,10 +5,15 @@ import { Gallery } from '@/components/Gallery';
 import { Stats } from '@/components/Stats';
 import { Team } from '@/components/Team';
 import { Download } from '@/components/Download';
+import { useEffect } from 'react';
 
 export default function App() {
+  useEffect(() => {
+    document.title = 'Pong Panic VR - The Ultimate VR Ping-Pong Experience';
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#f8f9fa] font-['Poppins']">
+    <div className="app">
       <Introduction />
       <Features />
       <GameplayVideo />
