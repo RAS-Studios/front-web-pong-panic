@@ -1,3 +1,9 @@
+import '../styles/features.css'
+
 export function Features() {
-  return <div>Features</div>
+  return (
+    <section className="features">
+      Test2
+    </section>
+  )
 }

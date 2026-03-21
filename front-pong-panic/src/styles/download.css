@@ -1,0 +1,9 @@
+.download {
+    height: 100vh;
+    scroll-snap-align: start; /* chaque section se "cale" */
+    background-color: aqua;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+}

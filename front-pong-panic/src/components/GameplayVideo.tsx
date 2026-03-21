@@ -1,3 +1,9 @@
+import '../styles/gameplayvideo.css'
+
 export function GameplayVideo() {
-  return <div>GameplayVideo</div>
+  return (
+    <section className="gameplayvideo">
+      Test3
+    </section>
+  )
 }

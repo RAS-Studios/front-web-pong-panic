@@ -1,3 +1,9 @@
+import '../styles/team.css'
+
 export function Team() {
-  return <div>Team</div>
+  return (
+    <section className="team">
+      Test5
+    </section>
+  )
 }

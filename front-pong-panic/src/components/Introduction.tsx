@@ -1,3 +1,9 @@
+import '../styles/introduction.css'
+
 export function Introduction() {
-  return <div>Introduction</div>
+  return (
+    <section className="introduction">
+      Test
+    </section>
+  )
 }

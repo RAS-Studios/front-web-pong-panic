@@ -1,0 +1,13 @@
+@import "fonts.css";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* désactive le scroll normal */
+}
+
+.app {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory; /* la magie */
+}
