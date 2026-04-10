@@ -1,6 +1,5 @@
 .download {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #c4b5fd, #f9a8d4, #93c5fd);
+    min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +7,36 @@
   padding: 60px 40px;
   text-align: center;
   position: relative;
+}
+
+.download::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/o8wywdl7.jpg');
+  background-size: cover;
+  background-position: center;
+  mask-image: linear-gradient(to top, black 30%, transparent 100%);
+  z-index: 0;
+}
+
+.download::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  mask-image: linear-gradient(to top, black 30%, transparent 100%);
+  z-index: 0;
+}
+
+.download-emoji,
+.download-title,
+.download-subtitle,
+.download-button,
+.download-note,
+.download-footer {
+  position: relative;
+  z-index: 2;
 }
 
 .download-emoji {

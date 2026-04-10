@@ -1,25 +1,52 @@
 .introduction {
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.introduction::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/Screenshot_1315.png');
+  background-size: cover;
+  background-position: center;
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  z-index: 0;
+}
+
+.introduction::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+  z-index: 0;
+}
+
+.title-int,
+.subtitle-int,
+.button-play {
+  position: relative;
+  z-index: 2;
 }
 
 .title-int {
     font-size: 80px;
     font-weight: 800;
     margin: 0;
-    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
 }
 
 .subtitle-int {
     font-size: 20px;
     font-weight: 400;
-    color: #4a5568;
+    color: white;
     margin: 0;
     text-align: center;
 }
