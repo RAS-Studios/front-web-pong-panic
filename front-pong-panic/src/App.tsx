@@ -6,8 +6,9 @@ import { Stats } from '@/components/Stats';
 import { Team } from '@/components/Team';
 import { Download } from '@/components/Download';
 import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-export default function App() {
+function Home() {
   useEffect(() => {
     document.title = 'Pong Panic VR - The Ultimate VR Ping-Pong Experience';
   }, []);
@@ -22,5 +23,16 @@ export default function App() {
       <Team />
       <Download />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      {/*<Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/profile" element={<Profile />} />*/}
+    </Routes>
   );
 }
