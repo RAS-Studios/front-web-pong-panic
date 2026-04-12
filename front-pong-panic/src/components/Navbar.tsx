@@ -5,7 +5,7 @@ import { TbLogout } from "react-icons/tb";
 import '../styles/navbar.css'
 
 export function Navbar() {
-    const { user, logout } = useAuth()
+    const { user, logout, isAuthenticated } = useAuth()
     const navigate = useNavigate()
 
     const handleLogout = () => {
@@ -16,10 +16,10 @@ export function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-actions">
-                {user ? (
+                {isAuthenticated ? (
                     <>
                         <button className='navbar-btn' onClick={() => navigate('/profile')}>
-                            <FaUser size={18}/> {user.username}
+                            <FaUser size={18}/> {user?.username}
                         </button>
                         <button className='navbar-btn navbar-btn-outline' onClick={handleLogout}>
                             <TbLogout size={18}/> Logout
@@ -27,7 +27,8 @@ export function Navbar() {
                     </>
                 ) : (
                         <button className='navbar-btn' onClick={() => navigate('/login')}>
-                            <FaUser size={18} /> Account
+                            <FaUser size={18} /> 
+                            <span>Account</span>
                         </button>
                 )}
             </div>

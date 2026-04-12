@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: flex-end;
     padding: 0 40px;
-    z-index: 100;
+    z-index: 200;
 }
 
 .navbar-actions {
@@ -17,27 +17,29 @@
 }
 
 .navbar-btn {
-    background: transparent;
-    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    padding: 8px 16px;
     color: white;
-    font-size: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    -webkit-text-fill-color: white; /* ← ajoute ça */
+    font-size: 15px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    transition: opacity 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    transition: opacity 0.2s ease, background 0.2s ease;
 }
-
 
 .navbar-btn:hover {
-    opacity: 0.8;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1;
 }
-
 .navbar-btn-outline {
     background: transparent;
-    border: 2px solid #a78bfa;
-    color: #a78bfa;
-    -webkit-text-fill-color: #a78bfa;
+    border: 2px solid white;
+    color: white;
+    -webkit-text-fill-color: white;
 }

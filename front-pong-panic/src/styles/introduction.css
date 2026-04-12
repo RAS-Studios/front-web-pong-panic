@@ -1,39 +1,39 @@
 .introduction {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  position: relative;
-  overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
 }
 
 .introduction::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/Screenshot_1315.png');
-  background-size: cover;
-  background-position: center;
-  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
-  z-index: 0;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/Screenshot_1315.png');
+    background-size: cover;
+    background-position: center;
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    z-index: 0;
 }
 
 .introduction::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
-  z-index: 0;
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    mask-image: linear-gradient(to bottom, black 30%, transparent 100%);
+    z-index: 0;
 }
 
 .title-int,
 .subtitle-int,
 .button-play {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
 .title-int {
@@ -62,6 +62,7 @@
     border-radius: 50px;
     cursor: pointer;
     transition: opacity 0.2s ease, transform 0.2s ease;
+	text-decoration: none;
 }
 
 .button-play:hover {

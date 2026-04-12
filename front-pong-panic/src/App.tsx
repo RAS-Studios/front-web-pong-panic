@@ -5,6 +5,9 @@ import { Gallery } from '@/components/Gallery';
 import { Stats } from '@/components/Stats';
 import { Team } from '@/components/Team';
 import { Download } from '@/components/Download';
+import { Login } from '@/components/Login';
+import { Register } from '@/components/Register';
+import { Profile } from '@/components/Profile';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -30,9 +33,9 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      {/*<Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/profile" element={<Profile />} />*/}
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }
