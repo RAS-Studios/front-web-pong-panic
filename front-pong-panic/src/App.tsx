@@ -8,6 +8,7 @@ import { Download } from '@/components/Download';
 import { Login } from '@/components/Login';
 import { Register } from '@/components/Register';
 import { Profile } from '@/components/Profile';
+import { AuthSuccess } from '@/components/AuthSuccess';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -36,6 +37,7 @@ export default function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/auth-success" element={<AuthSuccess />} />
     </Routes>
   );
 }

@@ -16,6 +16,11 @@ export function Navbar() {
     return (
         <nav className="navbar">
             <div className="navbar-actions">
+            <button className='navbar-btn' onClick={() => navigate('/')}>
+                <span>Home</span>
+            </button>
+            </div>
+            <div className="navbar-actions">
                 {isAuthenticated ? (
                     <>
                         <button className='navbar-btn' onClick={() => navigate('/profile')}>

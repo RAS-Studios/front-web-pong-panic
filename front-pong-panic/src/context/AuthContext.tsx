@@ -12,6 +12,8 @@ interface AuthContextType {
     user: User | null
     login: (email: string, password: string) => Promise<void>
     register: (username: string, email: string, password: string) => Promise<void>
+    loginWithGoogle: (token: string) => Promise<void>
+    loginWithMeta: (token: string) => Promise<void>
     logout: () => void
     isAuthenticated: boolean
 }
@@ -50,6 +52,22 @@ export function AuthProvider({ children }: {children: React.ReactNode}) {
         await api.post('users/register', { username, email, password })
     }
 
+    const loginWithGoogle = async (token: string) => {
+        const response = await api.post('auth/google/callback', { token })
+        localStorage.setItem('token', response.data.token)
+        const profileResponse = await api.get('users/me')
+        setUser(profileResponse.data)
+        setIsAuthenticated(true)
+    }
+
+    const loginWithMeta = async (token: string) => {
+        const response = await api.post('auth/facebook/callback', { token })
+        localStorage.setItem('token', response.data.token)
+        const profileResponse = await api.get('users/me')
+        setUser(profileResponse.data)
+        setIsAuthenticated(true)
+    }
+
     const logout = () => {
         localStorage.removeItem('token')
         setUser(null)
@@ -57,7 +75,7 @@ export function AuthProvider({ children }: {children: React.ReactNode}) {
     }
 
     return (
-        <AuthContext.Provider value={{ user, login, register, logout, isAuthenticated }}>
+        <AuthContext.Provider value={{ user, login, register, loginWithGoogle, loginWithMeta, logout, isAuthenticated }}>
             {children}
         </AuthContext.Provider>
     )

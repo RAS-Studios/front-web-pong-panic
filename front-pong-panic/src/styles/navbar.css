@@ -6,7 +6,7 @@
     height: 64px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 0 40px;
     z-index: 200;
 }
