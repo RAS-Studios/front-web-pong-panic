@@ -1,0 +1,85 @@
+.leaderboard-container {
+    min-height: 100vh;
+    background-color: #2d3748;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.leaderboard-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: white;
+    margin: 24px 0 28px 0;
+}
+
+.leaderboard-table {
+    background: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 900px;
+    border-collapse: collapse;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.leaderboard-table thead {
+    background: #f8f9fa;
+}
+
+.leaderboard-table th {
+    padding: 18px 24px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 700;
+    color: #718096;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.leaderboard-table td {
+    padding: 18px 24px;
+    font-size: 15px;
+    color: #2d3748;
+    border-top: 1px solid #f0f0f0;
+}
+
+.leaderboard-table tbody tr {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.leaderboard-table tbody tr:hover {
+    background: #f8f9fa;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Top 3 ranks */
+.leaderboard-table tbody tr:nth-child(1) td:first-child {
+    font-size: 20px;
+    font-weight: 800;
+    color: #f6c90e;
+}
+
+.leaderboard-table tbody tr:nth-child(2) td:first-child {
+    font-size: 20px;
+    font-weight: 800;
+    color: #a0aec0;
+}
+
+.leaderboard-table tbody tr:nth-child(3) td:first-child {
+    font-size: 20px;
+    font-weight: 800;
+    color: #c47c3e;
+}
+
+/* Username bold */
+.leaderboard-table td:nth-child(2) {
+    font-weight: 700;
+}
+
+/* Rating bold */
+.leaderboard-table td:last-child {
+    font-weight: 800;
+    color: #4a5568;
+}

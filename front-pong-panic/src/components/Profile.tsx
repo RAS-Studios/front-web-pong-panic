@@ -7,8 +7,6 @@ import { IoTrendingUp } from 'react-icons/io5'
 import { GiArcheryTarget } from 'react-icons/gi'
 import { useNavigate } from 'react-router-dom'
 
-
-
 interface UserProfile {
         username: string
         email: string
@@ -21,10 +19,29 @@ interface UserProfile {
         }
     }
 
+interface MatchPlayer {
+    userId: string
+    username: string
+    stats: {
+        total_wins: number
+        total_games: number
+        rating: number
+    }
+}
+
+interface MatchHistory {
+    _id: string
+    players: MatchPlayer[]
+    sets: { team1: number; team2: number }[]
+    winner: string
+    duration: number
+    createdAt: string
+}
+
 export function Profile() {
     const navigate = useNavigate()
-
     const [profile, setProfile] = useState<UserProfile | null>(null)
+    const [history, setHistory] = useState<MatchHistory[]>([])
 
     const winRate = profile && profile.stats.total_games > 0 ? 
     Math.round((profile.stats.total_wins / profile.stats.total_games) * 100) : 0
@@ -34,7 +51,11 @@ export function Profile() {
 
     useEffect(() => {
         api.get('users/me')
-        .then(response => setProfile(response.data))
+        .then(response => {
+            setProfile(response.data)
+            return api.get(`matches/history/${response.data._id}`)
+        })
+        .then(response => setHistory(response.data))
         .catch(() => {
             navigate('/login')
         })
@@ -68,6 +89,9 @@ export function Profile() {
         label: 'Wins',
     },
     ]
+
+
+
     return (
         <div className="profile-container">
             <Navbar />
@@ -92,7 +116,49 @@ export function Profile() {
                     ))}
                 </div>
             </div>
+            <div className="profile-history">
+                    <h3>Match History</h3>
+                    {history.length === 0 ? (
+                        <p>Aucun match joué pour l'instant</p>
+                    ) : (
+                        <div className="history-list">
+                            {history.map((match) => {
+                                const myIndex = match.players.findIndex(p => p.userId.toString() === profile._id.toString())
+                                const isWinner = match.winner.toString() === profile._id.toString()
+                                const opponent = match.players.find(p => p.userId.toString() !== profile._id.toString())
+                                const date = new Date(match.createdAt).toLocaleDateString()
+                                return (
+                                    <div key={match._id} className={`history-item ${isWinner ? 'win' : 'loss'}`}>
+                                        <span className={`result-badge ${isWinner ? 'win' : 'loss'}`}>
+                                            {isWinner ? 'WIN' : 'LOSS'}
+                                        </span>
+                                        <span className="opponent">vs {opponent?.username}</span>
+                                        <span className="sets">
+                                            {match.sets.map((s, i) => {
+                                                const wonSet = myIndex === 0 ? s.team1 > s.team2 : s.team2 > s.team1
+                                                return (
+                                                    <div key={i} className="set-bubble" data-tooltip={`${s.team1} - ${s.team2}`} style={{
+                                                        width: '18px',
+                                                        height: '18px',
+                                                        borderRadius: '50%',
+                                                        background: wonSet ? '#34d399' : '#f87171'
+                                                    }} />
+                                                )
+                                            })}
+                                            <span className="set-score">
+                                                {match.sets.filter((s) => myIndex === 0 ? s.team1 > s.team2 : s.team2 > s.team1).length}
+                                                {' - '}
+                                                {match.sets.filter((s) => myIndex === 0 ? s.team2 > s.team1 : s.team1 > s.team2).length}
+                                            </span>
+                                        </span>
+                                        <span className="date">{date}</span>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
-    </div>
     )
 }

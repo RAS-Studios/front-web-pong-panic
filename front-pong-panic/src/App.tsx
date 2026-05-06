@@ -9,6 +9,7 @@ import { Login } from '@/components/Login';
 import { Register } from '@/components/Register';
 import { Profile } from '@/components/Profile';
 import { AuthSuccess } from '@/components/AuthSuccess';
+import { Leaderboard } from '@/components/Leaderboard';
 import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
@@ -38,6 +39,7 @@ export default function App() {
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/auth-success" element={<AuthSuccess />} />
+      <Route path="/leaderboard" element={<Leaderboard />} />
     </Routes>
   );
 }

@@ -2,6 +2,7 @@ import '../styles/stats.css'
 import { FaTrophy, FaMedal } from 'react-icons/fa'
 import { GiArcheryTarget } from 'react-icons/gi'
 import { IoTrendingUp } from 'react-icons/io5'
+import { useNavigate } from 'react-router-dom'
 
 const stats = [
   {
@@ -31,6 +32,7 @@ const stats = [
 ]
 
 export function Stats() {
+  const navigate = useNavigate()
   return (
     <section className="stats">
       <h2 className="stats-title">Track Your Progress</h2>
@@ -53,7 +55,7 @@ export function Stats() {
           <h3 className="banner-title">Join Weekly Tournaments</h3>
           <p className="banner-desc">Compete for exclusive rewards and showcase your skills</p>
         </div>
-        <button className="banner-button">View Leaderboard</button>
+        <button className="banner-button" onClick={() => navigate('/leaderboard')}>View Leaderboard</button>
       </div>
     </section>
   )
