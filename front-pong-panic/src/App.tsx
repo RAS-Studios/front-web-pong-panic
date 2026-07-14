@@ -22,7 +22,7 @@ function Home() {
     <div className="app">
       <Introduction />
       <Features />
-      <GameplayVideo />
+      {/* <GameplayVideo /> */}
       <Gallery />
       <Stats />
       <Team />

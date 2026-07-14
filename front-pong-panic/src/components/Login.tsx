@@ -63,7 +63,7 @@ export function Login() {
 
                 <div className='sso-buttons'>
                     <button className='sso-btn google-btn' type="button" onClick={handleGoogleLogin}>
-                        Se connecter avec Google
+                        Login with Google
                     </button>
 
                     <button className='sso-btn meta-btn' type="button" onClick={handleMetaLogin}>

@@ -2,24 +2,24 @@ import '../styles/gallery.css'
 
 const images = [
   {
-    src: '../src/assets/798713.jpg',
-    alt: 'Mountain Arena',
-    label: 'Mountain Arena',
+    src: '../src/assets/Aquarium_1.png',
+    alt: 'Aquatic Arena',
+    label: 'Aquatic Arena',
   },
   {
-    src: '../src/assets/798714.jpg',
-    alt: 'Crystal City',
-    label: 'Crystal City',
+    src: '../src/assets/Aquarium_3.png',
+    alt: 'Aquatic Arena',
+    label: 'Aquatic Arena',
   },
   {
-    src: '../src/assets/809979.jpg',
-    alt: 'Prairie Fields',
-    label: 'Prairie Fields',
+    src: '../src/assets/Forest_1.png',
+    alt: 'Forest Arena',
+    label: 'Forest Arena',
   },
   {
-    src: '../src/assets/1395597.png',
-    alt: 'Pastel Geometry',
-    label: 'Pastel Geometry',
+    src: '../src/assets/Screenshot_1315.png',
+    alt: 'Forest Arena',
+    label: 'Forest Arena',
   }
 ]
 
