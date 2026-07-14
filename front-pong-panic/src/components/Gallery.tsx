@@ -1,23 +1,27 @@
 import '../styles/gallery.css'
+import Aquarium_1 from '../assets/Aquarium_1.png'
+import Aquarium_3 from '../assets/Aquarium_3.png'
+import Forest_1 from '../assets/Forest_1.png'
+import Screenshot_1315 from '../assets/Screenshot_1315.png'
 
 const images = [
   {
-    src: '../src/assets/Aquarium_1.png',
+    src: Aquarium_1,
     alt: 'Aquatic Arena',
     label: 'Aquatic Arena',
   },
   {
-    src: '../src/assets/Aquarium_3.png',
+    src: Aquarium_3,
     alt: 'Aquatic Arena',
     label: 'Aquatic Arena',
   },
   {
-    src: '../src/assets/Forest_1.png',
+    src: Forest_1,
     alt: 'Forest Arena',
     label: 'Forest Arena',
   },
   {
-    src: '../src/assets/Screenshot_1315.png',
+    src: Screenshot_1315,
     alt: 'Forest Arena',
     label: 'Forest Arena',
   }
