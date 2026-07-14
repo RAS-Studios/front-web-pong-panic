@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Introduction } from '@/components/Introduction';
+import { Features } from '@/components/Features';
+import { GameplayVideo } from '@/components/GameplayVideo';
+import { Gallery } from '@/components/Gallery';
+import { Stats } from '@/components/Stats';
+import { Team } from '@/components/Team';
+import { Download } from '@/components/Download';
+import { Login } from '@/components/Login';
+import { Register } from '@/components/Register';
+import { Profile } from '@/components/Profile';
+import { AuthSuccess } from '@/components/AuthSuccess';
+import { Leaderboard } from '@/components/Leaderboard';
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+function Home() {
+  useEffect(() => {
+    document.title = 'Pong Panic VR - The Ultimate VR Ping-Pong Experience';
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app">
+      <Introduction />
+      <Features />
+      {/* <GameplayVideo /> */}
+      <Gallery />
+      <Stats />
+      <Team />
+      <Download />
+    </div>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/auth-success" element={<AuthSuccess />} />
+      <Route path="/leaderboard" element={<Leaderboard />} />
+    </Routes>
+  );
+}

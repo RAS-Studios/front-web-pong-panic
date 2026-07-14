@@ -1,0 +1,118 @@
+.download {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+}
+
+.download::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/o8wywdl7.jpg');
+    background-size: cover;
+    background-position: center;
+    mask-image: linear-gradient(to top, black 30%, transparent 100%);
+    z-index: 0;
+}
+
+.download::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	mask-image: linear-gradient(to top, black 30%, transparent 100%);
+	z-index: 0;
+}
+
+.download-emoji,
+.download-title,
+.download-subtitle,
+.download-button,
+.download-note,
+.download-footer {
+	position: relative;
+	z-index: 2;
+}
+
+.download-emoji {
+	font-size: 80px;
+	margin-bottom: 20px;
+	display: inline-block;
+	animation: forehand 2s ease-in-out infinite;
+	transform-origin: bottom center;
+}
+
+@keyframes forehand {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(30deg);
+	}
+	50% {
+		transform: rotate(-20deg);
+	}
+	75% {
+		transform: rotate(10deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}
+
+
+.download-title {
+	font-size: 64px;
+	font-weight: 800;
+	color: white;
+	margin: 0 0 20px 0;
+}
+
+.download-subtitle {
+	font-size: 20px;
+	color: white;
+	margin: 0 0 40px 0;
+	max-width: 600px;
+	line-height: 1.6;
+}
+
+.download-button {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 18px 40px;
+	background: white;
+	color: #2d3748;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 50px;
+	text-decoration: none;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.download-button:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.download-note {
+	margin-top: 24px;
+	font-size: 15px;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.download-footer {
+	position: absolute;
+	bottom: 24px;
+	font-size: 14px;
+	color: rgba(255, 255, 255, 0.7);
+}
+
+
+
